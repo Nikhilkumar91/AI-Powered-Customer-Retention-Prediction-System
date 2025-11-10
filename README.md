@@ -319,7 +319,7 @@ I specialize in building **predictive models**, **automating ML pipelines**, and
 | Databases | SQL |
 | Version Control | Git & GitHub |
 
----
+----
 
 ### 💼 Previous Works
 
@@ -330,7 +330,13 @@ I specialize in building **predictive models**, **automating ML pipelines**, and
 
 ---
 
-### 📞 Contact
+## 🔗 Project Deployment: [AI-Powered Customer Retention Prediction System](https://ai-powered-customer-retention-prediction-bc97.onrender.com/)
+
+**📞 Support**
+For support or queries, contact: [nikhilkumarchary30@gmail.com](mailto:nikhilkumarchary30@gmail.com)
+
+----
+### 📞 Connect with me:
 
 - **LinkedIn:** [linkedin.com/in/nikhilkumar91](https://linkedin.com/in/nikhilkumar91)  
 - **Email:** [nikhilkumarchary30@gmail.com](mailto:nikhilkumarchary30@gmail.com)  
@@ -338,6 +344,7 @@ I specialize in building **predictive models**, **automating ML pipelines**, and
 - **Mobile:** +91 9133164879  
 
 ---
+
 
 > 🌟 *Built with passion for AI, Data, and Real-world Impact.*
 
