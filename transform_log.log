@@ -1,0 +1,11 @@
+2025-11-09 23:37:53,807 - INFO - Transformation Columns added : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt',
+       'tenure_qt_logcp', 'tenure_qt_arcsin', 'tenure_qt_boxcox',
+       'tenure_qt_quantile', 'tenure_qt_yeojohnson', 'MonthlyCharges_qt_logcp',
+       'MonthlyCharges_qt_arcsin', 'MonthlyCharges_qt_boxcox',
+       'MonthlyCharges_qt_quantile', 'MonthlyCharges_qt_yeojohnson',
+       'TotalCharges_qt_logcp', 'TotalCharges_qt_arcsin',
+       'TotalCharges_qt_boxcox', 'TotalCharges_qt_quantile',
+       'TotalCharges_qt_yeojohnson', 'charges_qt_logcp', 'charges_qt_arcsin',
+       'charges_qt_boxcox', 'charges_qt_quantile', 'charges_qt_yeojohnson'],
+      dtype='object')
+2025-11-09 23:37:53,807 - INFO -  X_train_num columns are : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')

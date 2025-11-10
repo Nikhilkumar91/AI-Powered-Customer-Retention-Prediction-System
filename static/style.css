@@ -1,0 +1,245 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #673ab7;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid #9575cd;
+}
+
+nav {
+  margin-top: 10px;
+}
+nav button {
+  background: white;
+  color: #673ab7;
+  border: none;
+  margin: 5px;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+nav button:hover {
+  background: #d1c4e9;
+}
+
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #512da8;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.sim-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.sim-selection img {
+  width: 60px;
+  height: 40px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.sim-selection input[type="radio"]:checked + img {
+  border-color: #673ab7;
+  transform: scale(1.1);
+}
+
+.btn {
+  background-color: #512da8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+.btn:hover {
+  background-color: #7e57c2;
+}
+
+.result-box {
+  text-align: center;
+  background: #ede7f6;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 10px;
+  background: #673ab7;
+  color: white;
+  border-top: 4px solid #9575cd;
+}
+/* =====================================
+   💻 Developer Section Styles (V Nikhil Kumar)
+   ===================================== */
+
+.dev-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 950px;
+  margin: 20px auto;
+  animation: fadeIn 0.8s ease-in-out;
+  flex-wrap: wrap;
+}
+
+.dev-info {
+  flex: 1;
+  margin-right: 30px;
+  min-width: 300px;
+}
+
+.profile-photo {
+  flex-basis: 200px;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(81, 45, 168, 0.3);
+  border: 4px solid #9575cd;
+  transition: transform 0.3s ease;
+}
+
+.profile-photo img:hover {
+  transform: scale(1.05);
+}
+
+.dev-info h3 {
+  color: #512da8;
+  margin-top: 15px;
+}
+
+.role {
+  color: #7e57c2;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about, .background, .skills, .projects, .contact {
+  margin-top: 20px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.tag.python { background: #3776ab; }
+.tag.ml { background: #43a047; }
+.tag.dl { background: #e53935; }
+.tag.web { background: #f57c00; }
+.tag.ds { background: #512da8; }
+.tag.viz { background: #009688; }
+.tag.db { background: #3f51b5; }
+.tag.git { background: #24292f; }
+
+.dev-info a {
+  color: #512da8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dev-info a:hover {
+  text-decoration: underline;
+}
+
+.dev-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.dev-info ul li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* end developer section */
+/* About card styles */
+.about-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  max-width: 900px;
+  margin: 16px auto;
+}
+
+.about-block { margin-bottom: 18px; }
+
+.about-list { margin: 8px 0 0 18px; }
+
+.about-list li { margin: 6px 0; line-height: 1.5; }
+
+/* small heading style */
+.about-card h3 {
+  color: #512da8;
+  margin-bottom: 8px;
+}

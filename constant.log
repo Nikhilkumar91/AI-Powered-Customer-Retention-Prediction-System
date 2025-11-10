@@ -1,0 +1,4 @@
+2025-11-09 23:37:53,827 - INFO - Total columns : 4 -> without variance 0 : 4 -> with Variance 0 : 0
+2025-11-09 23:37:53,827 - INFO - Variance 0 : names : Index([], dtype='object')
+2025-11-09 23:37:53,827 - INFO - Train Column Names : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')
+2025-11-09 23:37:53,827 - INFO - Test Column Names : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')

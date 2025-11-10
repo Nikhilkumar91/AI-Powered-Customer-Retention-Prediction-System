@@ -1,0 +1,155 @@
+2025-11-09 23:37:53,681 - INFO - X train shape: (5634, 23)---X test shape:(1409, 23)----y_train shape:(5634,)------y_test shape:  (1409,)
+2025-11-09 23:37:53,685 - INFO - Total missing values before imputation: 11
+2025-11-09 23:37:53,691 - INFO - Missing values after imputation (train): 0
+2025-11-09 23:37:53,691 - INFO - Missing values after imputation (test): 0
+2025-11-09 23:37:53,694 - INFO - Numerical column names: Index(['tenure', 'MonthlyCharges', 'TotalCharges', 'charges'], dtype='object')
+2025-11-09 23:37:53,695 - INFO - checking missing values:tenure            0
+MonthlyCharges    0
+TotalCharges      0
+charges           0
+dtype: int64
+2025-11-09 23:37:53,695 - INFO - Categorical Column Names: Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'PhoneService',
+       'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup',
+       'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies',
+       'Contract', 'PaperlessBilling', 'PaymentMethod', 'gateway', 'tax',
+       'sim'],
+      dtype='object')
+2025-11-09 23:37:53,720 - INFO - After variable Transformation X_train_num columns are : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')
+2025-11-09 23:37:53,825 - INFO - Train Data Features : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')
+2025-11-09 23:37:53,825 - INFO - Test Data Features : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')
+2025-11-09 23:37:53,827 - INFO - Train Column Names : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')
+2025-11-09 23:37:53,827 - INFO - Test Column Names : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')
+2025-11-09 23:37:53,829 - INFO - After constant and quasi contant Techniques
+2025-11-09 23:37:53,829 - INFO - Train Column Names : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')
+2025-11-09 23:37:53,829 - INFO - Test Column Names : Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt'], dtype='object')
+2025-11-09 23:37:53,895 - INFO - Training_data shape : (5634, 28) -> Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt',
+       'Contract', 'sim', 'SeniorCitizen_Yes', 'Partner_Yes', 'Dependents_Yes',
+       'MultipleLines_Yes', 'InternetService_Fiber optic',
+       'InternetService_No', 'OnlineSecurity_No internet service',
+       'OnlineSecurity_Yes', 'OnlineBackup_No internet service',
+       'OnlineBackup_Yes', 'DeviceProtection_No internet service',
+       'DeviceProtection_Yes', 'TechSupport_No internet service',
+       'TechSupport_Yes', 'StreamingTV_No internet service', 'StreamingTV_Yes',
+       'StreamingMovies_No internet service', 'StreamingMovies_Yes',
+       'PaperlessBilling_Yes', 'PaymentMethod_Credit card (automatic)',
+       'PaymentMethod_Electronic check', 'PaymentMethod_Mailed check'],
+      dtype='object')
+2025-11-09 23:37:53,895 - INFO - Testing_data shape : (1409, 28) -> Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt',
+       'Contract', 'sim', 'SeniorCitizen_Yes', 'Partner_Yes', 'Dependents_Yes',
+       'MultipleLines_Yes', 'InternetService_Fiber optic',
+       'InternetService_No', 'OnlineSecurity_No internet service',
+       'OnlineSecurity_Yes', 'OnlineBackup_No internet service',
+       'OnlineBackup_Yes', 'DeviceProtection_No internet service',
+       'DeviceProtection_Yes', 'TechSupport_No internet service',
+       'TechSupport_Yes', 'StreamingTV_No internet service', 'StreamingTV_Yes',
+       'StreamingMovies_No internet service', 'StreamingMovies_Yes',
+       'PaperlessBilling_Yes', 'PaymentMethod_Credit card (automatic)',
+       'PaymentMethod_Electronic check', 'PaymentMethod_Mailed check'],
+      dtype='object')
+2025-11-09 23:37:53,895 - INFO - ----------------Before Balancing------------------------
+2025-11-09 23:37:53,897 - INFO - Churn Yes Count: 1496
+2025-11-09 23:37:53,897 - INFO - Churn No  Count: 4138
+2025-11-09 23:37:55,438 - INFO - ----------------After Balancing-------------------------
+2025-11-09 23:37:55,439 - INFO - Balanced Yes: 4138
+2025-11-09 23:37:55,439 - INFO - Balanced No : 4138
+2025-11-09 23:37:55,439 - INFO - Balanced Columns: 28
+2025-11-09 23:37:55,439 - INFO - ---------Before scaling-------
+2025-11-09 23:37:55,440 - INFO - before sccaling columns  :
+ Index(['tenure_qt', 'MonthlyCharges_qt', 'TotalCharges_qt', 'charges_qt',
+       'Contract', 'sim', 'SeniorCitizen_Yes', 'Partner_Yes', 'Dependents_Yes',
+       'MultipleLines_Yes', 'InternetService_Fiber optic',
+       'InternetService_No', 'OnlineSecurity_No internet service',
+       'OnlineSecurity_Yes', 'OnlineBackup_No internet service',
+       'OnlineBackup_Yes', 'DeviceProtection_No internet service',
+       'DeviceProtection_Yes', 'TechSupport_No internet service',
+       'TechSupport_Yes', 'StreamingTV_No internet service', 'StreamingTV_Yes',
+       'StreamingMovies_No internet service', 'StreamingMovies_Yes',
+       'PaperlessBilling_Yes', 'PaymentMethod_Credit card (automatic)',
+       'PaymentMethod_Electronic check', 'PaymentMethod_Mailed check'],
+      dtype='object')
+2025-11-09 23:37:55,454 - INFO -    tenure_qt  MonthlyCharges_qt  TotalCharges_qt  ...  PaymentMethod_Credit card (automatic)  PaymentMethod_Electronic check  PaymentMethod_Mailed check
+0  -0.223916          -0.147316        -0.043670  ...                                    0.0                             0.0                         1.0
+1   0.636387           0.995273         1.027297  ...                                    0.0                             0.0                         0.0
+2  -1.705570          -0.963839        -2.018448  ...                                    0.0                             1.0                         0.0
+3  -0.999986          -0.018820        -0.903868  ...                                    0.0                             1.0                         0.0
+
+[4 rows x 28 columns]
+2025-11-09 23:37:55,462 - INFO - ----------After scaling--------
+2025-11-09 23:37:55,462 - INFO - [[-0.06800041 -0.24532377  0.07423671 ... -0.48099368 -0.85159328
+   1.97381757]
+ [ 0.7766645   0.96297241  1.1480842  ... -0.48099368 -0.85159328
+  -0.51766231]
+ [-1.52272353 -1.108804   -1.90585437 ... -0.48099368  1.20585314
+  -0.51766231]
+ ...
+ [ 0.24445567  1.58463698  0.70836935 ... -0.48099368  1.20585314
+  -0.51766231]
+ [ 0.48621462 -1.29322442 -0.18363292 ... -0.48099368  1.08252301
+  -0.51766231]
+ [ 0.1350923   0.12067624  0.35580304 ... -0.48099368  1.20585314
+  -0.51766231]]
+2025-11-09 23:37:58,683 - INFO - ============Finalied Model Logistic Regression===============
+2025-11-09 23:37:58,713 - INFO - Final All coulumns of training data:
+ [[-0.06800041 -0.24532377  0.07423671 -0.27729261  0.63175864  1.35151186
+  -0.48329748 -0.8974255   1.76346585 -0.89072299 -1.04548972 -0.44831551
+  -0.44831551  1.82704116 -0.44831551 -0.70341807 -0.44831551  1.46874168
+  -0.44831551 -0.57636013 -0.44831551 -0.82603777 -0.44831551  1.21673348
+  -1.38814419 -0.48099368 -0.85159328  1.97381757]
+ [ 0.7766645   0.96297241  1.1480842   0.83244041  1.9391994  -1.30150336
+  -0.48329748 -0.8974255  -0.5869254   1.15099301  0.96079163 -0.44831551
+  -0.44831551 -0.56377789 -0.44831551  1.47131621 -0.44831551 -0.70048743
+  -0.44831551 -0.57636013 -0.44831551  1.23336361 -0.44831551  1.21673348
+   0.74587843 -0.48099368 -0.85159328 -0.51766231]
+ [-1.52272353 -1.108804   -1.90585437 -1.38241366 -0.67568212  0.46717346
+  -0.48329748  1.14950686 -0.5869254  -0.89072299 -1.04548972 -0.44831551
+  -0.44831551 -0.56377789 -0.44831551 -0.70341807 -0.44831551 -0.70048743
+  -0.44831551 -0.57636013 -0.44831551 -0.82603777 -0.44831551 -0.83820998
+   0.74587843 -0.48099368  1.20585314 -0.51766231]
+ [-0.82996419 -0.10943825 -0.7882757  -0.1275332  -0.67568212 -1.30150336
+  -0.48329748 -0.8974255  -0.5869254  -0.89072299  0.96079163 -0.44831551
+  -0.44831551 -0.56377789 -0.44831551 -0.70341807 -0.44831551 -0.70048743
+  -0.44831551 -0.57636013 -0.44831551 -0.82603777 -0.44831551 -0.83820998
+   0.74587843 -0.48099368  1.20585314 -0.51766231]
+ [-2.46854237 -0.28434655  0.4285997  -0.27272754  1.9391994   1.35151186
+  -0.48329748 -0.8974255   1.76346585  1.15099301 -1.04548972 -0.44831551
+  -0.44831551  1.82704116 -0.44831551  1.47131621 -0.44831551 -0.70048743
+  -0.44831551  1.79162971 -0.44831551 -0.82603777 -0.44831551 -0.83820998
+   0.74587843 -0.48099368 -0.85159328 -0.51766231]
+ [-0.62227849 -0.15192817 -0.44595901 -0.19862364 -0.67568212  0.46717346
+  -0.48329748 -0.8974255  -0.5869254  -0.89072299  0.96079163 -0.44831551
+  -0.44831551 -0.56377789 -0.44831551 -0.70341807 -0.44831551 -0.70048743
+  -0.44831551 -0.57636013 -0.44831551 -0.82603777 -0.44831551 -0.83820998
+   0.74587843 -0.48099368  1.20585314 -0.51766231]
+ [ 0.2270565  -2.95140038 -0.36771474 -1.29068213  1.9391994  -1.30150336
+  -0.48329748  1.14950686  1.76346585 -0.89072299 -1.04548972  2.23057196
+   2.23057196 -0.56377789  2.23057196 -0.70341807  2.23057196 -0.70048743
+   2.23057196 -0.57636013  2.23057196 -0.82603777  2.23057196 -0.83820998
+  -1.38814419 -0.48099368 -0.85159328  1.97381757]
+ [ 2.76761829 -1.68600957  0.11923995 -1.75374845  1.9391994   0.46717346
+  -0.48329748  1.14950686  1.76346585 -0.89072299 -1.04548972  2.23057196
+   2.23057196 -0.56377789  2.23057196 -0.70341807  2.23057196 -0.70048743
+   2.23057196 -0.57636013  2.23057196 -0.82603777  2.23057196 -0.83820998
+   0.74587843  2.13154485 -0.85159328 -0.51766231]
+ [-0.12011758 -0.77330761 -0.28535541 -0.77840565 -0.67568212 -1.30150336
+  -0.48329748 -0.8974255  -0.5869254  -0.89072299 -1.04548972 -0.44831551
+  -0.44831551 -0.56377789 -0.44831551 -0.70341807 -0.44831551  1.46874168
+  -0.44831551 -0.57636013 -0.44831551  1.23336361 -0.44831551 -0.83820998
+   0.74587843 -0.48099368  1.20585314 -0.51766231]
+ [-0.45348898 -1.55379138 -0.83200728 -1.04013764  0.63175864 -0.41716495
+  -0.48329748 -0.8974255   1.76346585 -0.89072299 -1.04548972  2.23057196
+   2.23057196 -0.56377789  2.23057196 -0.70341807  2.23057196 -0.70048743
+   2.23057196 -0.57636013  2.23057196 -0.82603777  2.23057196 -0.83820998
+   0.74587843 -0.48099368 -0.85159328 -0.51766231]]
+2025-11-09 23:37:58,715 - INFO - Model Test Accuracy : 0.7636621717530163
+2025-11-09 23:37:58,717 - INFO - Confusion Matrix : [[779 257]
+ [ 76 297]]
+2025-11-09 23:37:58,724 - INFO - Classification Report :               precision    recall  f1-score   support
+
+           0       0.91      0.75      0.82      1036
+           1       0.54      0.80      0.64       373
+
+    accuracy                           0.76      1409
+   macro avg       0.72      0.77      0.73      1409
+weighted avg       0.81      0.76      0.78      1409
+
+2025-11-09 23:37:58,724 - INFO - =====Model Saving======

@@ -1,0 +1,74 @@
+2025-11-09 23:37:55,464 - INFO - Giving Data to Each Function
+2025-11-09 23:37:55,464 - INFO - ----KNN Algorithm--------
+2025-11-09 23:37:55,488 - INFO - Test Accuracy KNN : 0.7026259758694109
+2025-11-09 23:37:55,509 - INFO - confusion matrix : [[719 317]
+ [102 271]]
+2025-11-09 23:37:55,534 - INFO - classification_report :               precision    recall  f1-score   support
+
+           0       0.88      0.69      0.77      1036
+           1       0.46      0.73      0.56       373
+
+    accuracy                           0.70      1409
+   macro avg       0.67      0.71      0.67      1409
+weighted avg       0.77      0.70      0.72      1409
+
+2025-11-09 23:37:55,555 - INFO - ----Naive Bayes--------
+2025-11-09 23:37:55,560 - INFO - Test Accuracy NB : 0.6628814762242725
+2025-11-09 23:37:55,562 - INFO - confusion matrix : [[601 435]
+ [ 40 333]]
+2025-11-09 23:37:55,567 - INFO - classification_report :               precision    recall  f1-score   support
+
+           0       0.94      0.58      0.72      1036
+           1       0.43      0.89      0.58       373
+
+    accuracy                           0.66      1409
+   macro avg       0.69      0.74      0.65      1409
+weighted avg       0.80      0.66      0.68      1409
+
+2025-11-09 23:37:55,567 - INFO - ----Logistic Regression--------
+2025-11-09 23:37:55,581 - INFO - Test Accuracy LR : 0.758694109297374
+2025-11-09 23:37:55,582 - INFO - confusion matrix : [[768 268]
+ [ 72 301]]
+2025-11-09 23:37:55,586 - INFO - classification_report :               precision    recall  f1-score   support
+
+           0       0.91      0.74      0.82      1036
+           1       0.53      0.81      0.64       373
+
+    accuracy                           0.76      1409
+   macro avg       0.72      0.77      0.73      1409
+weighted avg       0.81      0.76      0.77      1409
+
+2025-11-09 23:37:55,586 - INFO - ----Decision Tree--------
+2025-11-09 23:37:55,659 - INFO - Test Accuracy DT : 0.7132718239886444
+2025-11-09 23:37:55,659 - INFO - confusion matrix : [[788 248]
+ [156 217]]
+2025-11-09 23:37:55,663 - INFO - classification_report :               precision    recall  f1-score   support
+
+           0       0.83      0.76      0.80      1036
+           1       0.47      0.58      0.52       373
+
+    accuracy                           0.71      1409
+   macro avg       0.65      0.67      0.66      1409
+weighted avg       0.74      0.71      0.72      1409
+
+2025-11-09 23:37:55,664 - INFO - ----Random Forest--------
+2025-11-09 23:37:55,712 - INFO - Test Accuracy RF : 0.765791341376863
+2025-11-09 23:37:55,713 - INFO - confusion matrix : [[842 194]
+ [136 237]]
+2025-11-09 23:37:55,718 - INFO - classification_report :               precision    recall  f1-score   support
+
+           0       0.86      0.81      0.84      1036
+           1       0.55      0.64      0.59       373
+
+    accuracy                           0.77      1409
+   macro avg       0.71      0.72      0.71      1409
+weighted avg       0.78      0.77      0.77      1409
+
+2025-11-09 23:37:55,719 - INFO - --------AUC--ROC----------
+2025-11-09 23:37:55,721 - INFO - 
+ AUC Scores for All Models:
+2025-11-09 23:37:55,721 - INFO - KNN  : 0.710
+2025-11-09 23:37:55,721 - INFO - Naive Bayes : 0.736
+2025-11-09 23:37:55,721 - INFO - Logistic Regression : 0.774
+2025-11-09 23:37:55,721 - INFO - Decision Tree : 0.671
+2025-11-09 23:37:55,721 - INFO - Random Forest : 0.724

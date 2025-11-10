@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Churn Prediction Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #673ab7;
+      color: white;
+      padding: 20px;
+      border-bottom: 5px solid #9575cd;
+    }
+
+    .result-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .result-container h1 {
+      color: #512da8;
+      margin-bottom: 20px;
+    }
+
+    .prediction-box {
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .churn {
+      background-color: #e53935;
+      box-shadow: 0 0 15px rgba(229, 57, 53, 0.6);
+    }
+
+    .stay {
+      background-color: #43a047;
+      box-shadow: 0 0 15px rgba(67, 160, 71, 0.6);
+    }
+
+    .probability {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .btn-back {
+      display: inline-block;
+      background: #512da8;
+      color: white;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      margin-top: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #7e57c2;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 15px;
+      background: #673ab7;
+      color: white;
+      border-top: 4px solid #9575cd;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📊 AI-Powered Customer Retention Prediction System Result</h1>
+  </header>
+
+  <div class="result-container">
+    <h1>Prediction Summary</h1>
+
+    {% if prediction == 1 %}
+    <div class="prediction-box churn">
+      ❌ Customer is likely to CHURN
+    </div>
+    {% else %}
+    <div class="prediction-box stay">
+      ✅ Customer is likely to STAY
+    </div>
+    {% endif %}
+
+    <div class="probability">
+      <b>Probability of Churn:</b> {{ churn_prob }}% <br>
+      <b>Probability of Staying:</b> {{ stay_prob }}%
+    </div>
+
+    <a href="/" class="btn-back">🔙 Go Back</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Telecom Churn Prediction | Designed by V Nikhil Kumar</p>
+  </footer>
+
+</body>
+</html>

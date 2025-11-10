@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📊 Telecom Churn Prediction System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    /* 💅 Additional styling for this version */
+    .container {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .sim-panel {
+      background: #f3e5f5;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 250px;
+    }
+
+    .sim-panel h3 {
+      color: #512da8;
+      margin-bottom: 15px;
+    }
+
+    .sim-selection {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sim-selection label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .sim-selection label:hover {
+      background: #ede7f6;
+    }
+
+    .sim-selection img {
+      width: 60px;
+      height: 40px;
+      border-radius: 6px;
+      border: 2px solid transparent;
+    }
+
+    .form-box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      flex-grow: 1;
+      max-width: 700px;
+    }
+
+    .group-title {
+      background: #673ab7;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #512da8;
+      margin-bottom: 4px;
+    }
+
+    input, select {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      background-color: #512da8;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #7e57c2;
+      transform: scale(1.05);
+    }
+
+    .result-box {
+      text-align: center;
+      background: #ede7f6;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .emoji-btn {
+      font-size: 18px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📊 AI-Powered Customer Retention Prediction System</h1>
+    <nav>
+      <button onclick="openSection('about')">ℹ️ About</button>
+      <button onclick="openSection('developer')">👨‍💻 Developer</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="form-section">
+      <h2>🔍 Enter Customer Details</h2>
+      <div class="container">
+
+        <!-- SIM Panel (Left Side) -->
+        <div class="sim-panel">
+          <h3>📶 Choose SIM Provider</h3>
+          <div class="sim-selection">
+            <label><input type="radio" name="sim" value="Airtel" form="predictForm" required>
+              <img src="{{ url_for('static', filename='airtel.avif') }}" alt="Airtel"> Airtel
+            </label>
+            <label><input type="radio" name="sim" value="Jio" form="predictForm">
+              <img src="{{ url_for('static', filename='Jio.png') }}" alt="Jio"> Jio
+            </label>
+            <label><input type="radio" name="sim" value="BSNL" form="predictForm">
+              <img src="{{ url_for('static', filename='bsnl.jpg') }}" alt="BSNL"> BSNL
+            </label>
+            <label><input type="radio" name="sim" value="Vi" form="predictForm">
+              <img src="{{ url_for('static', filename='vi.png') }}" alt="Vi"> Vi
+            </label>
+          </div>
+        </div>
+
+        <!-- Form Box (Right Side) -->
+        <div class="form-box">
+          <form id="predictForm" action="/predict" method="POST">
+
+            <div class="group-title">🧍 Personal Information</div>
+            <div class="form-group">
+              <label>Gender:</label>
+              <select name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Senior Citizen:</label>
+              <select name="SeniorCitizen" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Partner:</label>
+              <select name="Partner" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Dependents:</label>
+              <select name="Dependents" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="group-title">🌐 Internet & Services</div>
+            <div class="form-group">
+              <label>Phone Service:</label>
+              <select name="PhoneService">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Multiple Lines:</label>
+              <select name="MultipleLines">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No phone service">No phone service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Internet Service:</label>
+              <select name="InternetService">
+                <option value="DSL">DSL</option>
+                <option value="Fiber optic">Fiber optic</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="group-title">💰 Billing Information</div>
+            <div class="form-group">
+              <label>Tenure (months):</label>
+              <input type="number" step="1" name="tenure" placeholder="Enter tenure" required>
+            </div>
+
+            <div class="form-group">
+              <label>Monthly Charges:</label>
+              <input type="number" step="0.01" name="MonthlyCharges" placeholder="Enter monthly charge" required>
+            </div>
+
+            <div class="form-group">
+              <label>Total Charges:</label>
+              <input type="number" step="0.01" name="TotalCharges" placeholder="Enter total charge" required>
+            </div>
+
+            <div class="form-group">
+              <label>Contract Type:</label>
+              <select name="Contract">
+                <option value="Month-to-month">Month-to-month</option>
+                <option value="One year">One year</option>
+                <option value="Two year">Two year</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Payment Method:</label>
+              <select name="PaymentMethod">
+                <option value="Electronic check">Electronic check</option>
+                <option value="Mailed check">Mailed check</option>
+                <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                <option value="Credit card (automatic)">Credit card (automatic)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn"><span class="emoji-btn">🚀</span>Predict</button>
+          </form>
+
+          {% if prediction_text %}
+          <div class="result-box">
+            <h3>{{ prediction_text }}</h3>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="hidden">
+  <h2>📘 About this Project</h2>
+
+  <div class="about-card">
+    <!-- Goal -->
+    <div class="about-block">
+      <h3>🎯 Goal</h3>
+      <p>
+        Build a production-ready system that predicts whether a telecom customer will <b>churn</b> (leave the service) or <b>stay</b>.
+        The prediction helps business teams identify high-risk customers and take retention actions (offers, outreach, support).
+      </p>
+    </div>
+
+    <!-- Inputs -->
+    <div class="about-block">
+      <h3>🧾 Input Fields (what they mean & why they matter)</h3>
+      <ul class="about-list">
+        <li><b>Gender</b> — Customer's gender (used to capture demographic patterns).</li>
+        <li><b>Senior Citizen</b> — 0/1 flag; older customers sometimes have different churn behaviour.</li>
+        <li><b>Partner</b> — Whether customer has a partner (Yes/No). Family status can affect retention.</li>
+        <li><b>Dependents</b> — Whether customer has dependents (Yes/No); affects plan usage patterns.</li>
+        <li><b>Tenure</b> — Months the customer has been with the company. Short-tenure customers are often higher risk.</li>
+        <li><b>PhoneService</b> & <b>MultipleLines</b> — Phone-related services; different product usage influences churn.</li>
+        <li><b>InternetService</b> — DSL / Fiber optic / No — service type correlates with complaints & churn.</li>
+        <li><b>OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies</b> — Service add-ons (Yes / No / No internet) — availability & usage are strong predictors.</li>
+        <li><b>Contract</b> — Month-to-month / One year / Two year — contract length is a major churn factor (month-to-month usually higher churn).</li>
+        <li><b>PaperlessBilling</b> — Indicates billing preference; may reflect tech-savviness or account stickiness.</li>
+        <li><b>PaymentMethod</b> — How they pay (Electronic check, Mailed check, Bank transfer, Credit card) — payment friction can increase churn.</li>
+        <li><b>MonthlyCharges</b> & <b>TotalCharges</b> — Billing amounts: unusually high or rising charges often increase churn risk.</li>
+        <li><b>sim</b> — SIM provider (Airtel/Jio/BSNL/Vi): used if provider features/coverage affect churn.</li>
+      </ul>
+    </div>
+
+    <!-- Pipeline -->
+    <div class="about-block">
+      <h3>🛠️ Pipeline — step by step</h3>
+      <ol class="about-list">
+        <li><b>Data cleaning:</b> remove or impute missing values, correct types (numbers vs strings).</li>
+        <li><b>Encoding:</b> categorical features are converted into numeric form (one-hot, ordinal or mapping) so models can use them.</li>
+        <li><b>Feature selection:</b> statistical tests (Chi-square / ANOVA) choose the most relevant features — reduces noise and overfitting.</li>
+        <li><b>Balancing (SMOTE):</b> synthetic oversampling of minority class (churn) to avoid biased models when classes are imbalanced.</li>
+        <li><b>Scaling:</b> StandardScaler normalizes numeric features so algorithms treat them fairly.</li>
+        <li><b>Train & validate:</b> model (Logistic Regression) trained on processed data; evaluated by metrics such as accuracy, AUC-ROC, precision/recall.</li>
+        <li><b>Save artifacts:</b> trained model, scaler and final feature list are saved (pickles) and used by this Flask app for inference.</li>
+      </ol>
+    </div>
+
+    <!-- Algorithm -->
+    <div class="about-block">
+      <h3>🔎 Algorithm — Why Logistic Regression?</h3>
+      <p>
+        Logistic Regression is a reliable, interpretable algorithm for binary classification (churn vs stay). We selected it because:
+      </p>
+      <ul class="about-list">
+        <li><b>Interpretability:</b> coefficients show direction and strength of each feature — helpful for business insight.</li>
+        <li><b>Performance:</b> efficient for tabular data and often performs competitively after proper preprocessing.</li>
+        <li><b>Probabilities:</b> it naturally outputs probabilities (e.g. 82% churn risk), which are useful for triage and thresholding.</li>
+      </ul>
+    </div>
+
+    <!-- Output -->
+    <div class="about-block">
+      <h3>📤 Final Output — How to read it</h3>
+      <p>
+        The app returns:
+      </p>
+      <ul class="about-list">
+        <li><b>Prediction label:</b> <span style="color:#43a047;font-weight:bold;">STAY</span> or <span style="color:#e53935;font-weight:bold;">CHURN</span>.</li>
+        <li><b>Probability:</b> percentage score (e.g. <b>Churn: 78.4%</b>) — use this to prioritize high-risk customers (top-X percent).</li>
+        <li><b>Business action:</b> for high churn probability, consider special offers, retention calls, technician visits or discounts.</li>
+      </ul>
+    </div>
+
+    <!-- Quick notes -->
+    <div class="about-block">
+      <h3>📝 Quick Notes & Best Practices</h3>
+      <ul class="about-list">
+        <li>Model performance depends on data quality — keep training data updated (retrain regularly).</li>
+        <li>Tune decision threshold based on business objectives (precision vs recall trade-off).</li>
+        <li>Use the probabilities to create a risk band (low/medium/high) rather than a hard binary decision alone.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+    <section id="developer" class="hidden">
+  <h2>👨‍💻 Developer Profile</h2>
+
+  <div class="dev-container">
+
+    <!-- Right side profile image -->
+    <div class="profile-photo">
+      <img src="{{ url_for('static', filename='nikhil1.jpg') }}" alt="V Nikhil Kumar">
+    </div>
+
+    <!-- Left side content -->
+    <div class="dev-info">
+      <p class="role">Machine Learning Engineer | AI & ML Enthusiast | Data Science Enthusiast</p>
+
+      <div class="about">
+        <h3>🧾 About Me</h3>
+        <p>
+          Hi! I’m <b>V Nikhil Kumar</b>, a passionate <b>Machine Learning Engineer</b> with a strong interest in data-driven solutions.
+          I specialize in building predictive models, automating pipelines, and creating end-to-end machine learning web applications.
+        </p>
+      </div>
+
+      <div class="background">
+        <h3>🎓 Background</h3>
+        <p>
+          🎓 <b>Education:</b> B.Tech in Computer Science and Engineering<br>
+          💡 <b>Summary:</b>Passionate and self-driven Computer Science and Engineering (AIML) undergraduate with a strong foundation
+               in frontend development, data science, and machine learning. Skilled in building interactive web applications
+               and data-driven solutions using Python, SQL, and modern development tools. Seeking an opportunity to apply my
+                technical expertise and problem-solving skills in a challenging role as a Frontend Developer / Machine Learning
+                Engineer at a growth-oriented organization.
+        </p>
+      </div>
+
+      <div class="skills">
+        <h3>💪 Skills</h3>
+        <div class="skill-tags">
+          <span class="tag python">Python</span>
+          <span class="tag ml">Machine Learning</span>
+          <span class="tag dl">Deep Learning</span>
+          <span class="tag web">Flask</span>
+          <span class="tag ds">Data Science</span>
+          <span class="tag viz">Matplotlib</span>
+          <span class="tag db">SQL</span>
+          <span class="tag git">Git & GitHub</span>
+        </div>
+      </div>
+
+      <div class="projects">
+        <h3>💼 Previous Works</h3>
+        <ul>
+          <li>📊 <b>Credit Card Customer Analysis</b> — Data-driven insights into credit usage patterns.</li>
+          <li>💰 <b>Salary and Profit Predictor</b> — ML regression project for profit prediction.
+            <a href="https://simple-and-multiple-regression-project.onrender.com/" target="_blank">View Project ↗</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact">
+        <h3>📞 Contact</h3>
+        <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/nikhilkumar91/" target="_blank">linkedin.com/in/nikhilkumar91</a></p>
+        <p><b>Email:</b> <a href="mailto:nikhilkumarchary30@gmail.com">nikhilkumarchary30@gmail.com</a></p>
+        <p><b>GitHub:</b> <a href="https://github.com/Nikhilkumar91" target="_blank">github.com/</a></p>
+        <p><b>Mobile:</b> 9133164879</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Telecom Churn Prediction | Designed by V Nikhil Kumar</p>
+  </footer>
+
+  <script>
+    function openSection(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.add("hidden"));
+      document.getElementById(id).classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
